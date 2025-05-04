@@ -24,3 +24,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.message-user {
+  background-color: #6c47ff; /* Replace with your animal-purple */
+  margin-left: auto;
+  animation: slide-in 0.3s ease;
+}
+
+.message-bot {
+  background-color: #1f2937; /* bg-gray-800 */
+  color: white;
+  margin-right: auto;
+  animation: slide-in 0.3s ease;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

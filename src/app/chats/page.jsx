@@ -162,7 +162,7 @@ const ChatLayout = () => {
                 <div className="flex flex-col">
                   <div className={msg.role === 'user' ? "bg-[#9b87f5] rounded-2xl px-4 py-3 max-w-[85%] shadow-md text-white ml-auto animate-slide-in" : 
                     "bg-gray-800 text-white rounded-2xl px-4 py-3 max-w-[85%] shadow-md mr-auto animate-slide-in"}>
-                    <p>{msg.text}</p>
+                    <p className='text-sm md:text-base'>{msg.text}</p>
                   </div>
                   <span className={cn(
                     "text-xs text-gray-400 mt-1",

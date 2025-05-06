@@ -116,7 +116,8 @@ const FileUpload = () => {
         )}
       </div>
       <div className="flex items-center justify-center mt-4">
-        <button onClick={uploadFile}>upload</button>
+        {/* <button onClick={uploadFile}>upload</button> */}
+        <TailwindcssButtons label={'UploadFile'} onClick={uploadFile}/>
       </div>
     </div>
   );

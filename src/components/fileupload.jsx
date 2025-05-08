@@ -44,6 +44,7 @@ const FileUpload = () => {
   const uploadFile = async () => {
     const formData = new FormData();
     formData.append("file", file);
+    setUploading(true);
     try {
       // 1.store into appwrite
       console.log("Step 1: Storing PDF");
@@ -88,6 +89,8 @@ const FileUpload = () => {
 
     } catch (error) {
       console.log(error);
+    } finally {
+      setUploading(false);
     }
   }
 
@@ -116,8 +119,25 @@ const FileUpload = () => {
         )}
       </div>
       <div className="flex items-center justify-center mt-4">
+        <button
+          onClick={uploadFile}
+          disabled={uploading}
+          className={`px-4 py-1 text-sm rounded-2xl text-white ${uploading ? 'bg-pink-300 cursor-not-allowed' : 'bg-pink-500 hover:bg-pink-600'
+            } flex items-center gap-2`}
+        >
+          {uploading && (
+            <Loader2 className="animate-spin h-4 w-4" />
+          )}
+          {uploading ? "Uploading..." : "Upload"}
+        </button>
+
         {/* <button onClick={uploadFile}>upload</button> */}
-        <TailwindcssButtons label={'UploadFile'} onClick={uploadFile}/>
+        {/* <TailwindcssButtons
+          label={uploading ? 'Uploading...' : 'Upload File'}
+          onClick={uploadFile}
+          disabled={uploading}
+        /> */}
+
       </div>
     </div>
   );
